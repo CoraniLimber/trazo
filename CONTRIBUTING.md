@@ -53,8 +53,12 @@ Asegúrate de que te aparezca en **origin** tu nombre de usuario en el apartado 
 En caso de existir algún error revisar el apartado [Errores comunes](#errores-comunes).
 
 ### 4. Sincroniza antes de trabajar
+**Realiza** este paso **SIEMPRE ANTES** de empezar a trabajar en un nuevo Issue para tener tu repositorio al dia :D
+
 ```bash
+# Moverte a la rama dev
 git checkout dev
+# Trae los cambios del repositorio original a tu repositorio local
 git pull upstream dev
 ```
 
