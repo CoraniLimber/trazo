@@ -33,8 +33,10 @@ cd trazo
 ```
 
 ### 3. Agrega el repo original como upstream
+Para estar al tanto de las modificaciones que se realicen en el **repositorio original (sis-inf/pulso)** debes agregar el repositorio original como un upstream de la siguiente manera en la terminal de GitBash, puedes **copiar** el siguiente comando:
+
 ```bash
-git remote add upstream https://github.com/sis-inf/PROYECTO.git
+git remote add upstream https://github.com/sis-inf/trazo.git
 ```
 
 ### 4. Sincroniza antes de trabajar
