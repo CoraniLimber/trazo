@@ -63,9 +63,15 @@ git pull upstream dev
 ```
 
 ### 5. Crea tu rama de trabajo
+Recuerda trabajar con ramas. El nombre de la rama que debes utilizar para tu Issue esta siempre en la descripcion del mismo, ya sea en el apartado **"Rama sugerida"** o simplemente **"Rama"**.
+
+***tipo/descripcion-corta = el nombre de la Rama sugerida***
+
 ```bash
+# Crear y moverte a la rama que crearás
 git checkout -b tipo/descripcion-corta
 ```
+
 
 Ejemplos de nombres de rama:
 
