@@ -83,12 +83,24 @@ chore/configurar-github-actions
 security/analisis-dependencias
 
 ### 6. Trabaja y haz commits pequeños
+*"Un cambio, un commit".*
+
+Trabajar con commits permite tener "Checkpoints" y mantener un historial del trabajo que haz realizado. Normalmente llevan una descripcion corta tal y como se muestra en el ejemplo de abajo. 
+
+La descripcion del commit debe ser de forma imperativa y concisa: *"docs: actualizar guía de instalación", "fix: corregir error en validación de usuario"*, entre otros.
+
+El commit debe responder a la pregunta: *"¿Qué hace este cambio?"*
+
 ```bash
 git add .
 git commit -m "tipo: descripción corta en presente"
 ```
+Para saber de que *tipo* debes realizar el commit revisa el apartado de [convención de commits](#convención-de-commits).
 
 ### 7. Sube tu rama a tu fork
+
+***tipo/descripcion-corta = el nombre de la rama donde trabajaste.***
+
 ```bash
 git push origin tipo/descripcion-corta
 ```
