@@ -16,6 +16,13 @@ Ahora deberías tener un repositorio en tu **cuenta personal** de GitHub llamado
 *Ejemplo.-* **Atoxny/pulso**
 
 ### 2. Clona tu fork
+Desde el apartado **Code** del repositorio en tu cuenta personal realiza la clonación con los siguientes pasos:
+1.   Click al botón de color verde **"<> Code"**.
+2.   Selecciona Local -> HTTPS.
+3.   Copia la URL.
+4.   Desde tu computadora (portátil o de escritorio), en la carpeta donde quieres clonar el repositorio, abre la terminal de GitBash haciendo click derecho dentro la carpeta.
+5.   En la terminal de GitBash escribe los siguientes comandos:
+
 ```bash
 git clone https://github.com/TU-USUARIO/PROYECTO.git
 cd PROYECTO
