@@ -1,35 +1,53 @@
-# Arquitectura del Sistema
+
+# Arquitectura de la librería Trazo
+
 ## Visión general
-la libreria trazo está diseñada para gestionar la ejecución de consultas a base de datos de manera modular, separando responsabilidades en diferentes componentes.
+
+**Trazo** es una librería de métodos numéricos en JavaScript (ES6+) diseñada para resolver problemas matemáticos mediante algoritmos de aproximación. Su arquitectura es modular y extensible.
+
 ## Componentes principales
--**Conexión:** Maneja la conexión a la base de datos.
--**Consultas:** Permite ejecutar sentencias SQL.
--**Resultados:** Procesa los resultados de la consultas.
--**Utilidades:** Manejo de errores y logs.
+
+- **Sistemas de ecuaciones lineales:** Métodos como Gauss, Gauss-Jordan, LU, Jacobi y Gauss-Seidel.
+- **Sistemas no lineales:** Bisección, secante, Newton-Raphson, falsa posición.
+- **Interpolación:** Lagrange y Newton.
+- **Integración numérica:** Trapecio, Simpson, cuadratura de Gauss.
+- **Core:** Punto de entrada (`index.js`) que organiza los módulos.
+
 ## Diagrama de arquitectura
+
+
 trazo/
 │
-├── conexion/
-├── consultas/
-├── resultados/
-└── utilidades/
+├── sistemas/
+│ ├── lineales/
+│ └── no-lineales/
+├── interpolacion/
+└── integracion/
+
+
 ## Tecnologías utilizadas
-| Componente | Tecnología | Versión | Justificación |
-|------------|------------|---------|---------------|
-| Base       | java       |Lenguaje principal       |
-| DB         | MySQL      | Base de datos           |
-| Tests      | JUnit      | Pruebas                 | 
+
+| Componente | Tecnología | Justificación |
+|-----------|------------|--------------|
+| Núcleo | JavaScript (ES6+) | Lenguaje principal |
+| Dependencias | npm | Gestión de paquetes |
+| Documentación | Markdown | Claridad |
+
 ## Decisiones de diseño
-**Contexto:** Separar responsabilidades
-**Decisión:** Uso de módulos independientes
-**Consecuencias:** Código más mantenible
+
 ### Decisión 1
-**Contexto:** Se necesita organizar el código para que sea fácil de mantener y escalar.
-**Decisión:** Separar la libería en módulos independientes (conexión, consultas, resultado, utilidades).
-**Consecuencias:** El código es más ordenado, reutilizable y fácil de mantener.
+**Contexto:** Se requiere modularidad.  
+**Decisión:** Separar la librería en módulos independientes.  
+**Consecuencias:** Facilita mantenimiento y escalabilidad.
+
 ### Decisión 2
-**Contexto:** Se requiere manejar errores y eventos del sistema.
-**Decisión:** Implementar un módulo de utilidades para logs y manejo de errores.
-**Consecuencias:** Mejora el control del sistema y facilita la depuración.
+**Contexto:** Facilidad de uso.  
+**Decisión:** Exportar funciones desde `index.js`.  
+**Consecuencias:** Uso sencillo en otros proyectos.
+
 ## Flujo de datos
-Usuario → Módulo de consultas → Base de datos → Módulo de resultado → Usuario
+
+1. El usuario importa un método.
+2. Define parámetros.
+3. El sistema ejecuta el algoritmo.
+4. Retorna resultados.
