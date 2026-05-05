@@ -17,12 +17,12 @@ function raizNewton(f, df, x0, iteraciones) {
 
 const resultado = raizNewton(x => x*x - 9, x => 2*x, 3, 5);
 console.log(resultado);
-
+```
 ---
-**Output esperado : 3**
+** Output esperado : 3**
 
 
----
+
 ## 2. Interpolación lineal
 
 ```js
@@ -32,13 +32,13 @@ function interpolar(x0, y0, x1, y1, x) {
 
 const resultado = interpolar(1, 2, 3, 6, 2);
 console.log(resultado);
-
+```
 ---
-**Output esperado : 4**
+** Output esperado : 4**
 
 
----
-##3. Integral (regla del trapecio)
+
+## 3. Integral (regla del trapecio)
 
 ```js
 function integrar(f, a, b, n) {
@@ -54,7 +54,7 @@ function integrar(f, a, b, n) {
 
 const resultado = integrar(x => x * x, 0, 2, 100);
 console.log(resultado);
+```
+---
+** Output esperado : 2.66**
 
----
-**Output esperado : 2.66**
----
