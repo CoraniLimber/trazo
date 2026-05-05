@@ -19,7 +19,7 @@ const resultado = raizNewton(x => x*x - 9, x => 2*x, 3, 5);
 console.log(resultado);
 ```
 ---
-** Output esperado : 3**
+### Output esperado : 3
 
 
 
@@ -34,7 +34,7 @@ const resultado = interpolar(1, 2, 3, 6, 2);
 console.log(resultado);
 ```
 ---
-** Output esperado : 4**
+### Output esperado : 4
 
 
 
@@ -56,5 +56,5 @@ const resultado = integrar(x => x * x, 0, 2, 100);
 console.log(resultado);
 ```
 ---
-** Output esperado : 2.66**
+### Output esperado : 2.66
 
