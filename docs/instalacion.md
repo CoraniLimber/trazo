@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Trazo es una librería de métodos numéricos desarrollada en JavaScript.
+Trazo es una librería de métodos numéricos.
 
 ---
 
