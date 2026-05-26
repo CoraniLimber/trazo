@@ -1,7 +1,7 @@
 /**
  * Re-exporta la función pública para cálculo de derivadas.
  */
-export { derivative } from './calculus/derivative.js';
+export { derivative } from './integracion/derivative.js';
 
 /**
  * Re-exporta el método público de integración Simpson 1/3.
