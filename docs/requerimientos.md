@@ -1,32 +1,32 @@
-# Requerimientos del Proyecto - Trazo
+# Requerimientos del sistema - Trazo
 
-## Requerimientos Funcionales
+## Requerimientos Funcionales (RF)
 
 | ID | Descripción | Prioridad | Estado |
-|---|---|---|---|
-| RF-001 | Implementar el método de Bisección para hallar raíces en intervalos. | Alta | Pendiente |
-| RF-002 | Implementar el método de Newton-Raphson mediante el uso de derivadas. | Alta | Pendiente |
-| RF-003 | Implementar el método de la Secante para funciones de difícil derivación. | Media | Pendiente |
-| RF-004 | Validar intervalos de entrada mediante el Teorema del Valor Intermedio. | Alta | Pendiente |
-| RF-005 | Calcular y retornar el error relativo porcentual en cada iteración. | Alta | Pendiente |
-| RF-006 | Generar una tabla de iteraciones detallada para cada cálculo realizado. | Media | Pendiente |
-| RF-007 | Permitir la configuración manual de la tolerancia (épsilon) y el límite de iteraciones. | Baja | Pendiente |
-| RF-008 | Exportar los resultados de las raíces halladas en formato JSON o CSV. | Media | Pendiente |
+|----|------------|----------|--------|
+| RF-001 | Resolver ecuaciones lineales mediante el método de Gauss | Alta | Pendiente |
+| RF-002 | Resolver ecuaciones no lineales usando el método de Bisección | Alta | Pendiente |
+| RF-003 | Implementar el método de Newton-Raphson | Alta | Pendiente |
+| RF-004 | Implementar interpolación de Lagrange | Media | Pendiente |
+| RF-005 | Calcular integrales usando el método del Trapecio | Media | Pendiente |
+| RF-006 | Permitir importar funciones de la librería en otros proyectos | Alta | Pendiente |
 
-### Requerimientos No Funcionales
+---
 
-| ID | Descripción | Categoría | Estado |
-|---|---|---|---|
-| **RNF-001** | **Compatibilidad:** La librería debe ser multiplataforma, funcionando correctamente en Windows 10/11 y distribuciones Linux (Ubuntu/Debian) con Python 3.10+. | Compatibilidad | Pendiente |
-| **RNF-002** | **Precisión Numérica:** Todos los cálculos de raíces deben soportar una precisión mínima de $10^{-10}$ utilizando tipos de datos `float64`. | Precisión | Pendiente |
-| **RNF-003** | **Rendimiento:** El tiempo de respuesta para encontrar una raíz con 500 iteraciones no debe superar los 150 milisegundos en hardware estándar. | Rendimiento | Pendiente |
-| **RNF-004** | **Dependencias:** La librería solo puede depender de `NumPy` para operaciones matemáticas pesadas, evitando dependencias externas innecesarias para mantenerla ligera. | Restricción | Pendiente |
-| **RNF-005** | **Mantenibilidad:** El código debe seguir las guías de estilo PEP 8 y estar documentado con Docstrings para facilitar su uso por otros desarrolladores. | Calidad | Pendiente |
-## Requerimientos de Sistema
+## Requerimientos No Funcionales (RNF)
+
+| ID | Categoría | Descripción |
+|----|----------|------------|
+| RNF-001 | Rendimiento | Los cálculos deben ejecutarse en menos de 1 segundo |
+| RNF-002 | Usabilidad | La librería debe ser fácil de usar e integrar |
+| RNF-003 | Mantenibilidad | El código debe estar organizado y documentado |
+
+---
+
+## Requisitos del Sistema (RS)
 
 | ID | Descripción |
-|---|---|
-| RS-001 | Instalación previa de Python 3.10 o superior. |
-| RS-002 | Librería NumPy instalada para el manejo de vectores y matrices. |
-| RS-003 | Espacio mínimo en disco de 50MB para la instalación de la librería. |
-| RS-004 | Procesador con soporte para operaciones de punto flotante de 64 bits. |
+|----|------------|
+| RS-001 | Node.js versión 16 o superior |
+| RS-002 | npm instalado |
+| RS-003 | Compatible con Linux, Windows y Mac |
