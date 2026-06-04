@@ -98,3 +98,15 @@ En problemas de álgebra lineal se recomienda verificar el condicionamiento de l
 La representación IEEE 754 es fundamental para el funcionamiento de JavaScript, pero introduce limitaciones inherentes en la precisión numérica.
 
 Comprender los errores de redondeo, utilizar tolerancias adecuadas, evitar la cancelación catastrófica y considerar el número de condición de matrices permite desarrollar algoritmos numéricos más robustos y confiables.
+
+## Buenas prácticas para métodos numéricos
+
+Cuando se desarrollan algoritmos numéricos en JavaScript es importante considerar las limitaciones de la representación de punto flotante desde el inicio del diseño. Muchos errores difíciles de detectar provienen de pequeñas diferencias numéricas que se acumulan con el tiempo.
+
+Una práctica recomendada es evitar comparaciones directas entre números decimales utilizando el operador de igualdad. En su lugar, debe verificarse si la diferencia absoluta entre dos valores es menor que una tolerancia previamente definida. Esto permite trabajar de forma más segura con resultados aproximados.
+
+También es recomendable realizar pruebas con diferentes conjuntos de datos para identificar posibles problemas de estabilidad numérica. Algunos algoritmos funcionan correctamente con ciertos valores de entrada pero presentan errores cuando los números son muy grandes, muy pequeños o contienen muchos decimales.
+
+En procesos iterativos, como Newton-Raphson o métodos de integración numérica, la elección adecuada de la tolerancia tiene un impacto directo sobre la precisión y el rendimiento. Una tolerancia demasiado pequeña puede aumentar innecesariamente el número de iteraciones, mientras que una tolerancia muy grande puede producir resultados poco confiables.
+
+Finalmente, la documentación de estas limitaciones ayuda a que otros desarrolladores comprendan el comportamiento esperado de la biblioteca y utilicen correctamente los métodos numéricos implementados.
