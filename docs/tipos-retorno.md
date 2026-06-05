@@ -22,7 +22,18 @@ Los métodos de Trazo pueden retornar distintos tipos de resultados dependiendo 
 | derivative          | Número          | derivada calculada                      | Error nativo   |
 | simpson13           | Número          | resultado de integración                | Error nativo   |
 | simpson38           | Número          | resultado de integración                | Error nativo   |
-
+| trapezoidal         | Número          | resultado de integración                | Error nativo   |
+| gauss-jordan        | Array           | solución del sistema                    | Error nativo   |
+| lu                  | Objeto          | solucion, iteraciones, convergio, tabla | Error nativo   |
+| falsa-posicion      | Objeto          | raiz, iteraciones, convergio, tabla     | NumericalError |
+| muller              | Objeto          | raiz, iteraciones, convergio, tabla     | NumericalError |
+| punto-fijo          | Objeto          | raiz, iteraciones, convergio, tabla     | NumericalError |
+| secante             | Objeto          | raiz, iteraciones, convergio, tabla     | NumericalError |
+| euler               | Objeto          | solucion, tabla                         | Error nativo   |
+| euler-mejorado      | Objeto          | solucion, tabla                         | Error nativo   |
+| trapezoidal         | Número          | resultado de integración                | Error nativo   |
+| newton-dd           | Número          | valor interpolado                       | Error nativo   |
+| splines             | Objeto          | solucion, tabla                         | Error nativo   |
 ---
 
 ## Estructura estándar de retorno
