@@ -53,15 +53,14 @@ docs(interpolacion): actualizar documentación
 
 ## Ejemplos correctos
 
-text
-feat(no-lineales): implementar método de bisección
-feat(lineales): agregar método LU
-fix(interpolacion): corregir cálculo de splines
-fix(integracion): validar número de intervalos
-docs(docs): agregar guía de contribución
-test(no-lineales): añadir pruebas para secante
-refactor(utils): simplificar validaciones
-ci(ci): actualizar flujo de GitHub Actions
+- feat(no-lineales): implementar método de bisección
+- feat(lineales): agregar método LU
+- fix(interpolacion): corregir cálculo de splines
+- fix(integracion): validar número de intervalos
+- docs(docs): agregar guía de contribución
+- test(no-lineales): añadir pruebas para secante
+- refactor(utils): simplificar validaciones
+- ci(ci): actualizar flujo de GitHub Actions
 
 
 ---
