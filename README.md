@@ -1,6 +1,22 @@
 # Trazo
 
 > Trazo es una librería de métodos numéricos en JavaScript diseñado para resolver problemas matemáticos mediante métodos de aproximación.
+## Inicio Rápido
+
+```bash
+npm install trazo
+
+```js
+import { biseccion } from 'trazo';
+const resultado = biseccion(x => x * x - 4, 0, 3, 0.001);
+console.log(resultado);
+```
+
+Output esperado:
+
+```text
+2.000...
+```
 
 ## ¿Qué es?
 
