@@ -41,8 +41,6 @@ E_r = |(2.003 - 1.990) / 2.003| × 100% ≈ 0.649%
 ---
 ## Error relativo aproximado
 
-## Error relativo aproximado
-
 El **error relativo aproximado** mide la diferencia entre dos aproximaciones consecutivas cuando no se conoce el valor real de la solucion. Es uno de los errores mas utilizados en metodos iterativos.
 
 ```
