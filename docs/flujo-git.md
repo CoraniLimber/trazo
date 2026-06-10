@@ -45,3 +45,20 @@ Paso 4. **`npm run test:cov`**
    - **Si falla:**  Asegúrate de escribir las pruebas necesarias para cubrir las nuevas líneas de código implementadas.
 
 >  ***Importante:*** Si cualquiera de estos pasos falla, debes resolver el problema antes de proceder con el commit o el push.
+---
+
+## Ubicación de nuevos archivos
+
+Al crear nuevos métodos, asegúrate de colocarlos en los directorios correctos según su categoría:
+
+- Métodos de ecuaciones no lineales:
+  src/no-lineales/metodo.js
+
+- Métodos de integración numérica:
+   src/integracion/metodo.js
+
+- Métodos de sistemas de ecuaciones lineales:
+   src/lineales/metodo.js
+
+>  ***Importante:*** No utilizar rutas antiguas como src/root/, src/integration/ o src/linearAlgebra/.
+---
