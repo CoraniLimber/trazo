@@ -35,30 +35,28 @@ Trazo facilita la implementación de algoritmos matemáticos complejos, evitando
 
 ## Métodos numéricos disponibles
 
-El proyecto implementa los siguientes métodos:
-
-> Sistemas de ecuaciones Lineales:
-	- Eliminacion de Gauss
-	- Gauss-Jordan
-	- Descomposicion LU
-	- Jacobi
-	- Gauss-Seidel
-	
-> Sistema de ecuaciones no Lineales:
-	- Método de bisección  
-	- Método de la secante  
-	- Método de Newton-Raphson
-	- Método de Falsa Posición
-	- Método de Punto Fijo
-	
-> Interpolacion:
-	- Interpolación de Lagrange
-	- Interpolación de Newton
-	
-> Integración:
-	- Regla del trapecio  
-	- Método de Simpson (1/3, 3/8)
-	- Cuadratura de Gauss
+| Categoría                     | Método                              |
+|-----------------------------|-------------------------------------|
+| Sistemas lineales           | Eliminación de Gauss                |
+| Sistemas lineales           | Gauss-Jordan                       |
+| Sistemas lineales           | Descomposición LU                  |
+| Sistemas lineales           | Jacobi                             |
+| Sistemas lineales           | Gauss-Seidel                       |
+| Ecuaciones no lineales      | Método de bisección                |
+| Ecuaciones no lineales      | Método de la secante               |
+| Ecuaciones no lineales      | Método de Newton-Raphson           |
+| Ecuaciones no lineales      | Método de Falsa Posición           |
+| Ecuaciones no lineales      | Método de Punto Fijo               |
+| Interpolación               | Interpolación de Lagrange          |
+| Interpolación               | Interpolación de Newton            |
+| Interpolación               | Splines cúbicos                    |
+| Integración numérica        | Regla del trapecio                 |
+| Integración numérica        | Método de Simpson (1/3, 3/8)       |
+| Integración numérica        | Cuadratura de Gauss                |
+| Integración numérica        | Gauss-Legendre                     |
+| Derivación numérica         | Diferencias finitas                |
+| EDOs                        | Runge-Kutta 4 (RK4)                |
+| Ajuste de curvas            | Mínimos cuadrados                  |
 
 > Nota: Actualmente en desarrollo.
 
