@@ -10,13 +10,38 @@ import {
 /**
  * Encuentra una raíz de f(x) = 0 en [a, b] usando el Método de Bisección.
  *
- * @param {Function} f                  - Función continua a evaluar.
- * @param {number}   a                  - Extremo izquierdo del intervalo.
- * @param {number}   b                  - Extremo derecho del intervalo.
- * @param {number}   [tolerancia=1e-6]  - Criterio de parada por error absoluto.
- * @param {number}   [maxIter=100]      - Número máximo de iteraciones.
- * @returns {Object} Resultado siguiendo el contrato de Trazo.
- * @throws {ErrorParametros} Si f(a) · f(b) >= 0.
+ * @param {Object} parametros - Parámetros de entrada del método.
+ * @param {Function} parametros.f - Función continua a evaluar. Debe recibir un número y devolver un número.
+ * @param {number} parametros.a - Extremo izquierdo del intervalo inicial.
+ * @param {number} parametros.b - Extremo derecho del intervalo inicial.
+ * @param {number} [parametros.tolerancia=1e-6] - Criterio de parada basado en el error absoluto.
+ * @param {number} [parametros.maxIter=100] - Número máximo de iteraciones permitidas.
+ * @returns {{
+ *   resultado: number,
+ *   iteraciones: Array<{
+ *     n: number,
+ *     a: number,
+ *     b: number,
+ *     c: number,
+ *     fa: number,
+ *     fb: number,
+ *     fc: number,
+ *     error: number
+ *   }>,
+ *   convergio: boolean,
+ *   mensaje: string,
+ *   meta: {
+ *     metodo: string,
+ *     parametros: {
+ *       a: number,
+ *       b: number,
+ *       tolerancia: number,
+ *       maxIter: number
+ *     },
+ *     tiempo_ms: number
+ *   }
+ * }} Objeto de resultado siguiendo el contrato de Trazo.
+ * @throws {ErrorParametros} Si la función no es válida, el intervalo es inválido, la tolerancia o el máximo de iteraciones no son válidos, o si f(a) · f(b) >= 0.
  */
 function biseccion({ f, a, b, tolerancia = 1e-6, maxIter = 100 }) {
   validarFuncion(f, "f");
