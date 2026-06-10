@@ -12,7 +12,8 @@
     "test:watch": "jest --watch tests",
     "test:cov": "jest --coverage",
     "lint": "eslint src tests",
-    "format": "prettier --write src tests"
+    "format": "prettier --write src tests",
+    "typecheck": "tsc -p jsconfig.json --noEmit"
   },
   "devDependencies": {
     "eslint": "^8.57.1",
