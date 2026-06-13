@@ -13,7 +13,7 @@ Calcula la raíz de una función usando el método de bisección.
 * tol: tolerancia
 
 *Retorno:*
-Valor aproximado de la raíz
+Objeto con resultado, iteraciones, convergencia y metadatos.
 
 *Ejemplo:*
 biseccion(x => x\*x - 4, 0, 3, 0.001)
@@ -43,6 +43,28 @@ console.log(raiz);
 2
 
 ```
+### Acceso a iteraciones
+
+```js
+const resultado = biseccion({
+  f: x => x * x - 4,
+  a: 0,
+  b: 3,
+  tolerancia: 0.001
+});
+
+console.log(resultado.resultado);
+console.log(resultado.convergio);
+console.log(resultado.iteraciones);
+````
+
+### Acceder a una iteración específica
+```js
+console.log(resultado.iteraciones[0]);
+```
+
+---
+
 
 \---
 
@@ -197,7 +219,7 @@ Calcula raíces con método de Newton.
 * tol: tolerancia
 
 *Retorno:*
-Raíz aproximada
+Objeto con resultado, iteraciones, convergencia y metadatos.
 
 *Ejemplo:*
 newton(x => x\*x - 2, 1, 0.001)
@@ -224,5 +246,25 @@ console.log(raiz);
 
 1.414
 
+```
+### Acceso a iteraciones
+
+```js
+const resultado = newtonRaphson({
+  f: x => x * x - 2,
+  df: x => 2 * x,
+  x0: 1,
+  tolerancia: 0.001
+});
+
+console.log(resultado.resultado);
+console.log(resultado.convergio);
+console.log(resultado.iteraciones);
+```
+
+### Acceder a una iteración específica
+
+```js
+console.log(resultado.iteraciones[0]);
 ```
 
