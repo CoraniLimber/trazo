@@ -2,8 +2,15 @@
   "name": "trazo",
   "version": "1.0.0",
   "description": "Numerical methods library for mathematics and engineering applications",
-  "main": "src/index.js",
+  "main": "dist/trazo.cjs.js",
+  "module": "dist/trazo.esm.js",
   "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist/trazo.cjs.js",
+      "import": "./dist/trazo.esm.js"
+    }
+  },
   "scripts": {
     "start": "node src/index.js",
     "build": "rollup -c",
