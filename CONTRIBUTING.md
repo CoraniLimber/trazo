@@ -108,7 +108,7 @@ npm run lint
 ```
 Además, instala los hooks de pre-commit si aún no lo hiciste:
 ```bash 
-npx pre-commit install
+pre-commit install
 ```
 ---
 ### 8. Sube tu rama a tu fork
