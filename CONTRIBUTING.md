@@ -97,7 +97,21 @@ git commit -m "tipo: descripción corta en presente"
 ```
 Para saber de que *tipo* debes realizar el commit revisa el apartado de [convención de commits](#convención-de-commits).
 
-### 7. Sube tu rama a tu fork
+### 7. Antes de hacer commit
+
+Antes de realizar un commit, asegúrate de ejecutar los siguientes comandos para verificar que el código cumple con los estándares del proyecto:
+
+```bash
+npm test
+npm run format:check
+npm run lint
+```
+Además, instala los hooks de pre-commit si aún no lo hiciste:
+```bash 
+npx pre-commit install
+```
+---
+### 8. Sube tu rama a tu fork
 
 ***tipo/descripcion-corta = el nombre de la rama donde trabajaste.***
 
@@ -105,7 +119,7 @@ Para saber de que *tipo* debes realizar el commit revisa el apartado de [convenc
 git push origin tipo/descripcion-corta
 ```
 
-### 8. Abre un Pull Request
+### 9. Abre un Pull Request
 1. Ve a tu Fork en GitHub, aquel repositorio que está en tu cuenta personal.
 2. Click en el banner de color amarillo: "Compare & pull request"
    En caso de que no aparezca: 
@@ -163,7 +177,6 @@ Este proyecto usa español como idioma estándar para la estructura de carpetas.
 - ✅ Todo PR necesita al menos una revisión
 
 ---
-
 ## Ramas del proyecto
 
 | Rama | Propósito |
