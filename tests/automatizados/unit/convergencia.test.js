@@ -1,4 +1,4 @@
-import { checkConvergence, ConvergenceHistory } from '../../../src/utils/convergence.js';
+import { checkConvergence } from '../../../src/utils/convergence.js';
 
 describe('checkConvergence', () => {
     test('retorna converged=true cuando error < tolerancia', () => {
@@ -26,3 +26,4 @@ describe('checkConvergence', () => {
         expect(() => checkConvergence(0.001, '0.001')).toThrow();
     });
 });
+
