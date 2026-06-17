@@ -1,17 +1,45 @@
-// Verificar qué exporta convergence.js y ajustar el test
-// Por ahora, simplificamos el test para que pase
+const {
+  checkConvergence,
+  ConvergenceHistory
+} = require("../../../../src/utils/convergence");
 
-describe('Convergencia - Tests simplificados', () => {
-    test('verifica que el módulo existe', async () => {
-        const module = await import('../../../src/utils/convergence.js');
-        expect(module).toBeDefined();
-    });
+describe("checkConvergence", () => {
+  test("retorna converged=true cuando error < tolerancia", () => {
+    const resultado = checkConvergence(1.001, 1.000, 0.01);
 
-    test('verifica que hay funciones exportadas', async () => {
-        const module = await import('../../../src/utils/convergence.js');
-        const exports = Object.keys(module);
-        expect(exports.length).toBeGreaterThan(0);
-        console.log('Exportaciones de convergence.js:', exports);
-    });
+    expect(resultado.converged).toBe(true);
+  });
+
+  test("retorna converged=false cuando error >= tolerancia", () => {
+    const resultado = checkConvergence(1.1, 1.0, 0.01);
+
+    expect(resultado.converged).toBe(false);
+  });
+
+  test("tolerancia <= 0 lanza error", () => {
+    expect(() => checkConvergence(1.0, 1.0, 0)).toThrow();
+  });
 });
 
+describe("ConvergenceHistory", () => {
+  test("secuencia convergente retorna converged=true", () => {
+    const history = new ConvergenceHistory();
+
+    history.addValue(1.0);
+    history.addValue(1.001);
+
+    const resultado = history.checkLastTwo(0.01);
+
+    expect(resultado.converged).toBe(true);
+  });
+
+  test("menos de dos valores retorna converged=false", () => {
+    const history = new ConvergenceHistory();
+
+    history.addValue(1.0);
+
+    const resultado = history.checkLastTwo(0.01);
+
+    expect(resultado.converged).toBe(false);
+  });
+});

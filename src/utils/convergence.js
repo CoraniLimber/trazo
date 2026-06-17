@@ -1,80 +1,86 @@
 /**
- * Módulo para verificar convergencia de métodos numéricos
- * @module utils/convergence
+ * Utilidad para verificar convergencia de métodos numéricos
+ * @param {number} xNew - Valor actual de la iteración
+ * @param {number} xOld - Valor anterior de la iteración
+ * @param {number} tol - Tolerancia para considerar convergencia
+ * @returns {{ converged: boolean, lastDiff: number }} Objeto con estado de convergencia y última diferencia
  */
-
-/**
- * Verifica si un método ha convergido
- * @param {number} error - Error actual
- * @param {number} tolerancia - Tolerancia permitida
- * @returns {Object} Resultado con converged, error y tolerancia
- */
-export function checkConvergence(error, tolerancia) {
-    if (typeof error !== 'number' || isNaN(error)) {
-        throw new Error('El error debe ser un número válido');
-    }
-    if (typeof tolerancia !== 'number' || isNaN(tolerancia) || tolerancia <= 0) {
-        throw new Error('La tolerancia debe ser un número positivo');
-    }
+function checkConvergence(xNew, xOld, tol) {
+    // Calcular la diferencia absoluta
+    const lastDiff = Math.abs(xNew - xOld);
+    
+    // Verificar si la diferencia es menor que la tolerancia
+    const converged = lastDiff < tol;
+    
+    // Retornar objeto con los resultados
     return {
-        converged: error <= tolerancia,
-        error: error,
-        tolerancia: tolerancia
+        converged: converged,
+        lastDiff: lastDiff
     };
 }
 
 /**
- * Clase para manejar el historial de convergencia
+ * Clase para mantener historial limitado de valores (últimos 2)
+ * Útil para usar en métodos iterativos como Newton y bisección
  */
-export class ConvergenceHistory {
+class ConvergenceHistory {
     constructor() {
-        this.historial = [];
+        this.values = [];
     }
-
+    
     /**
-     * Agrega un error al historial
-     * @param {number} error - Error a agregar
+     * Agrega un nuevo valor y mantiene solo los últimos 2
+     * @param {number} value - Nuevo valor a agregar
      */
-    add(error) {
-        if (typeof error !== 'number' || isNaN(error) || error < 0) {
-            throw new Error('El error debe ser un número positivo');
+    addValue(value) {
+        this.values.push(value);
+        // Limitar historial a 2 valores
+        if (this.values.length > 2) {
+            this.values.shift();
         }
-        this.historial.push(error);
     }
-
+    
     /**
-     * Obtiene todo el historial
-     * @returns {number[]} Historial de errores
+     * Verifica convergencia usando los últimos 2 valores
+     * @param {number} tol - Tolerancia para convergencia
+     * @returns {{ converged: boolean, lastDiff: number | null }} Resultado de convergencia
      */
-    getAll() {
-        return this.historial;
-    }
-
-    /**
-     * Obtiene el último error
-     * @returns {number} Último error
-     */
-    getLast() {
-        return this.historial[this.historial.length - 1];
-    }
-
-    /**
-     * Obtiene la cantidad de errores registrados
-     * @returns {number} Longitud del historial
-     */
-    length() {
-        return this.historial.length;
-    }
-
-    /**
-     * Verifica si está convergiendo
-     * @param {number} tolerancia - Tolerancia permitida
-     * @returns {boolean} True si convergió
-     */
-    isConverging(tolerancia) {
-        if (this.historial.length === 0) {
-            return false;
+    checkLastTwo(tol) {
+        if (this.values.length < 2) {
+            return {
+                converged: false,
+                lastDiff: null
+            };
         }
-        return this.getLast() < tolerancia;
+        
+        const xOld = this.values[0];
+        const xNew = this.values[1];
+        const lastDiff = Math.abs(xNew - xOld);
+        
+        return {
+            converged: lastDiff < tol,
+            lastDiff: lastDiff
+        };
+    }
+    
+    /**
+     * Resetea el historial
+     */
+    reset() {
+        this.values = [];
+    }
+    
+    /**
+     * Obtiene el último valor almacenado
+     * @returns {number | undefined}
+     */
+    getLastValue() {
+        return this.values[this.values.length - 1];
     }
 }
+
+// Exportar las funciones y clases
+module.exports = {
+    checkConvergence,
+    ConvergenceHistory
+};
