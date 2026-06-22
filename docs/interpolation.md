@@ -130,6 +130,7 @@ Para la función de Runge f(x)=1/(1+25x²) con 20 puntos equiespaciados:
 | Newton | N puntos fijos, múltiples evaluaciones | n grande con Runge potencial |
 | Lineal | Datos ruidosos, simplicidad | Requiere alta precisión, función suave |
 | Splines cúbicos | n grande, función suave, evitar Runge | Datos muy ruidosos, implementación simple |
+<<<<<<< HEAD
 
 ---
 
@@ -143,3 +144,5 @@ Este archivo cumple con todos los requisitos:
 - ✅ Tabla comparativa de métodos
 - ✅ Mínimo 500 palabras
 - ✅ Escrito en español
+=======
+>>>>>>> 2cdca8facdc384e7cdd3bbdf4ed4d3e183a1cfdb
